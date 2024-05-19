@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator anim;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     Vector2 movement;
@@ -52,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        float spid = Mathf.Max(Mathf.Abs(horizontal), Mathf.Abs(vertical));
+        anim.SetFloat("Speed", spid);
+        
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {

@@ -112,16 +112,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 9d70045d79bc9b64fb15fed3807c6325, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4356085463785225042, guid: 3a0e2cba4d6da424c84cdf82f9c786a6, type: 3}
+    - target: {fileID: 3626916397498700004, guid: 9d70045d79bc9b64fb15fed3807c6325, type: 3}
       propertyPath: m_SortingOrder
       value: 998
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 9d70045d79bc9b64fb15fed3807c6325, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.16
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 9d70045d79bc9b64fb15fed3807c6325, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: -4.43
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 9d70045d79bc9b64fb15fed3807c6325, type: 3}
       propertyPath: m_LocalPosition.z
@@ -223,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  dashTimerImage: {fileID: 0}
   rr: {fileID: 1748005564951144937}
 --- !u!96 &1748005564951144937
 TrailRenderer:
