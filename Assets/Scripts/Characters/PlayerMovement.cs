@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,8 +15,11 @@ public class PlayerMovement : MonoBehaviour
     private float dashingStrenght = 40f;
     private bool isDashing = false;
     private bool isFacingRight = true;
+    public Image dashTimerImage;
 
     private float horizontal, vertical;
+
+    private bool isCooldown;
 
 
     [SerializeField] private TrailRenderer rr;
@@ -24,11 +28,23 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isCooldown = false;
     }
 
 
     void Update()
     {
+        if (isCooldown)
+        {
+            dashTimerImage.fillAmount -= 1 / dashingCooldown * Time.deltaTime;
+            if (dashTimerImage.fillAmount <= 0)
+            {
+                dashTimerImage.fillAmount = 1;
+                isCooldown = false;
+
+            }
+        }
+
         if (isDashing)
         {
             return;
@@ -39,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
+            isCooldown = true;
             StartCoroutine(Dash());
         }
 
@@ -81,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         //rb.velocity = new Vector2(transform.localScale.x * dashingStrenght, 0f);
         Vector2 dashDirection = new Vector2(horizontal, vertical).normalized;
 
-        // Apply the dash velocity
+        
         rb.velocity = dashDirection * dashingStrenght;
         rr.emitting = true;
         yield return new WaitForSeconds(dashTime);

@@ -15,10 +15,12 @@ public class Weapon : MonoBehaviour
     private bool canShoot = true;
     public bool isBoomer;
     public GameObject shootParticles;
+    private AudioSource source;
 
-
-
-
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -35,6 +37,7 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator Shoot()
     {
+        source.Play();
         if (isBoomer && !isShotgun)
         {
             canShoot = false;
