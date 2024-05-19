@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48efda57c28bc544cbca6eddef9cdf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0, z: -8}
   smoothness: 0.01
 --- !u!1 &813507084
 GameObject:
@@ -1016,11 +1016,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167875330}
   m_CullTransparentMesh: 1
---- !u!95 &1194865088 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4727732219643281177, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
-  m_PrefabInstance: {fileID: 9183349918588161456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1229282640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,10 +2036,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1837422596296619508, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1194865088}
-    - target: {fileID: 1837422596296619508, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
       propertyPath: dashTimerImage
       value: 
       objectReference: {fileID: 1387725699}
@@ -2095,22 +2086,6 @@ PrefabInstance:
     - target: {fileID: 4383035323166526940, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727732219643281177, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 847dd8f18338d7041827bdd1e6a716a8, type: 2}
-    - target: {fileID: 7193176076567175733, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7193176076567175733, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7867929364737889815, guid: 3a0e2cba4d6da424c84cdf82f9c786a6, type: 3}
-    - target: {fileID: 7193176076567175733, guid: 08ccd18d4acfcda4a8bd48403536c22b, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -13,26 +13,26 @@ public class EnemyController : MonoBehaviour
     private Vector2 patrolCenter;
     public Vector2 wayPoint;
 
+    private Vector3 lastPosition;
+
     void Start()
     {
         patrolCenter = transform.position;
         SetNewDestination();
+        lastPosition = transform.position;
     }
 
     void Update()
     {
-        if (canSee)
+        Vector2 targetPosition = canSee ? (Vector2)player.position : wayPoint;
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        if (!canSee && Vector2.Distance(transform.position, wayPoint) < range)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            SetNewDestination();
         }
-        else
-        {
-            transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, wayPoint) < range)
-            {
-                SetNewDestination();
-            }
-        }
+
+        FlipTowardsMovementDirection();
     }
 
     void SetNewDestination()
@@ -55,5 +55,22 @@ public class EnemyController : MonoBehaviour
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
         }
+    }
+
+    void FlipTowardsMovementDirection()
+    {
+        Vector3 currentPosition = transform.position;
+        Vector3 movementDirection = currentPosition - lastPosition;
+
+        if (movementDirection.x < 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (movementDirection.x > 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+
+        lastPosition = currentPosition;
     }
 }

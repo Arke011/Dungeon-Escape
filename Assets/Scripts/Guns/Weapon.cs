@@ -142,7 +142,7 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator BulletGone(GameObject bullet)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Destroy(bullet);
     }
 }
