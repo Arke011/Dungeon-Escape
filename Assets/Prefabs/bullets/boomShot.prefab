@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7193860888515320595}
   - component: {fileID: -7835751062912709488}
   - component: {fileID: 5832508921427379337}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: boomShot
   m_TagString: bullet
   m_Icon: {fileID: 0}

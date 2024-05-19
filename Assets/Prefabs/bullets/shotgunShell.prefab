@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6647203617329772063}
   - component: {fileID: 3819819504729278462}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: shottyShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 937627153312680623}
   - component: {fileID: 8166651928155047892}
   - component: {fileID: 5579001417890094732}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: shotgunShell
   m_TagString: bullet
   m_Icon: {fileID: 0}

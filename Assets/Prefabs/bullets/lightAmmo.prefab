@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 624037026201052894}
   - component: {fileID: 8259055670677618445}
   - component: {fileID: 9040529195563003187}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lightAmmo
   m_TagString: bullet
   m_Icon: {fileID: 0}

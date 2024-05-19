@@ -10,8 +10,6 @@ public class Bullet : MonoBehaviour
     private bool hitTarget;
     [SerializeField] private TrailRenderer rr;
     
-    
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();   
@@ -37,10 +35,5 @@ public class Bullet : MonoBehaviour
             hp.TakeDamage(damage);
             hitTarget = true;
         }
-
-
-
-    }
-
-    
+    } 
 }
