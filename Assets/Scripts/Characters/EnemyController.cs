@@ -6,14 +6,16 @@ public class EnemyController : MonoBehaviour
     public float speed = 5f;
     public bool canSee = false;
     [SerializeField]
-    float range;
+    private float range;
     [SerializeField]
-    float maxDistance;
+    private float maxDistance;
 
-    Vector2 wayPoint;
-    
+    private Vector2 patrolCenter;
+    public Vector2 wayPoint;
+
     void Start()
     {
+        patrolCenter = transform.position;
         SetNewDestination();
     }
 
@@ -30,13 +32,12 @@ public class EnemyController : MonoBehaviour
             {
                 SetNewDestination();
             }
-
         }
     }
 
     void SetNewDestination()
     {
-        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
+        wayPoint = patrolCenter + new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
     }
 
     private void FixedUpdate()
