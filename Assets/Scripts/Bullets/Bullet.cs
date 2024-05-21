@@ -35,5 +35,11 @@ public class Bullet : MonoBehaviour
             hp.TakeDamage(damage);
             hitTarget = true;
         }
-    } 
+    }
+    
+    private IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
 }

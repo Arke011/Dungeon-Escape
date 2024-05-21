@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 5896935147779966683}
   - component: {fileID: 4285002969588388933}
   - component: {fileID: 1585928790591706064}
-  - component: {fileID: 1919773130281477392}
   - component: {fileID: 1408583024786050430}
   - component: {fileID: 8368413975389045597}
   m_Layer: 2
@@ -183,28 +182,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1919773130281477392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4260777882324845712}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85afa00bb43486e40bf20e7acf1c2dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponPivot: {fileID: 0}
-  shootPoint: {fileID: 0}
-  bulletPrefab: {fileID: 3221494643996916698, guid: 7c2eeeab4c6776942868dc927dde6577, type: 3}
-  bulletSpeed: 20
-  pick: {fileID: 0}
-  shootDelay: 0.5
-  isShotgun: 0
-  boomerVisual: {fileID: 0}
-  isBoomer: 0
-  shootParticles: {fileID: 201250119082514193, guid: 83fda2fff914e9e4d903a28f9590d9f5, type: 3}
 --- !u!82 &1408583024786050430
 AudioSource:
   m_ObjectHideFlags: 0

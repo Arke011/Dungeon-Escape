@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8010760102950684642}
-  - component: {fileID: 8242286840249131994}
   - component: {fileID: 110460400249551010}
   - component: {fileID: 8646196102423800669}
   - component: {fileID: 7918965103021572088}
+  - component: {fileID: 906925893352462592}
   m_Layer: 2
   m_Name: boomerang1
   m_TagString: Weapon
@@ -36,28 +36,6 @@ Transform:
   - {fileID: 4732592879456044180}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8242286840249131994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694359287272662445}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85afa00bb43486e40bf20e7acf1c2dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponPivot: {fileID: 0}
-  shootPoint: {fileID: 0}
-  bulletPrefab: {fileID: 6256070289203109049, guid: e4d98d41428c3134fbfe1351d569754f, type: 3}
-  bulletSpeed: 10
-  pick: {fileID: 0}
-  shootDelay: 2
-  isShotgun: 0
-  boomerVisual: {fileID: 2170105086163635977}
-  isBoomer: 1
-  shootParticles: {fileID: 201250119082514193, guid: 971813f3a94df4641be94c8b644b91a7, type: 3}
 --- !u!50 &110460400249551010
 Rigidbody2D:
   serializedVersion: 4
@@ -216,6 +194,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &906925893352462592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694359287272662445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178fda846b898a3489827316c9e8ea65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPivot: {fileID: 0}
+  shootPoint: {fileID: 0}
+  bulletPrefab: {fileID: 6256070289203109049, guid: e4d98d41428c3134fbfe1351d569754f, type: 3}
+  bulletSpeed: 20
+  shootDelay: 2
+  shootParticles: {fileID: 201250119082514193, guid: 971813f3a94df4641be94c8b644b91a7, type: 3}
 --- !u!1 &2170105086163635977
 GameObject:
   m_ObjectHideFlags: 0

@@ -93,7 +93,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5432835680865607575}
-  - component: {fileID: 4598919111217904720}
   - component: {fileID: 2818009437517055156}
   - component: {fileID: 196983127734073447}
   - component: {fileID: 1157608750606111508}
@@ -121,28 +120,6 @@ Transform:
   - {fileID: 3101492271550429885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4598919111217904720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7036283709028551083}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85afa00bb43486e40bf20e7acf1c2dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponPivot: {fileID: 0}
-  shootPoint: {fileID: 0}
-  bulletPrefab: {fileID: 6256070289203109049, guid: e4d98d41428c3134fbfe1351d569754f, type: 3}
-  bulletSpeed: 10
-  pick: {fileID: 0}
-  shootDelay: 2
-  isShotgun: 0
-  boomerVisual: {fileID: 1139519143332825602}
-  isBoomer: 1
-  shootParticles: {fileID: 201250119082514193, guid: 971813f3a94df4641be94c8b644b91a7, type: 3}
 --- !u!50 &2818009437517055156
 Rigidbody2D:
   serializedVersion: 4

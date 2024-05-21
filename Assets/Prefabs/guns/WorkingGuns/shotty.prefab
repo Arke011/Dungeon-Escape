@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2241745381123129995}
   - component: {fileID: 7727574619451236275}
   - component: {fileID: 8820916495313487565}
-  - component: {fileID: 4418630794741279698}
   - component: {fileID: 3017622853538228512}
+  - component: {fileID: 8630139319741701665}
   m_Layer: 2
   m_Name: shotty
   m_TagString: Weapon
@@ -98,28 +98,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.11919153}
   serializedVersion: 2
   m_Radius: 0.6191915
---- !u!114 &4418630794741279698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4659720036848515264}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85afa00bb43486e40bf20e7acf1c2dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponPivot: {fileID: 0}
-  shootPoint: {fileID: 0}
-  bulletPrefab: {fileID: 7574084456060139741, guid: 5e8808981ebb88c40b4a6116ed8c2c3e, type: 3}
-  bulletSpeed: 20
-  pick: {fileID: 0}
-  shootDelay: 2
-  isShotgun: 1
-  boomerVisual: {fileID: 0}
-  isBoomer: 0
-  shootParticles: {fileID: 5072412514571676003, guid: 1cee972fb85edbc4c9af3792037261ca, type: 3}
 --- !u!82 &3017622853538228512
 AudioSource:
   m_ObjectHideFlags: 0
@@ -216,6 +194,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8630139319741701665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659720036848515264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178fda846b898a3489827316c9e8ea65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPivot: {fileID: 0}
+  shootPoint: {fileID: 0}
+  bulletPrefab: {fileID: 7574084456060139741, guid: 5e8808981ebb88c40b4a6116ed8c2c3e, type: 3}
+  bulletSpeed: 40
+  shootDelay: 2
+  shootParticles: {fileID: 5072412514571676003, guid: 1cee972fb85edbc4c9af3792037261ca, type: 3}
 --- !u!1 &7479134599836018458
 GameObject:
   m_ObjectHideFlags: 0

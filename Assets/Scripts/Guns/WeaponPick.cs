@@ -1,31 +1,26 @@
 using UnityEngine;
-using TMPro;
 
 public class WeaponPick : MonoBehaviour
 {
-    public bool canGrab;
     public Transform hand;
     public GameObject weapon;
-    public TMP_Text grabText;
     public bool gunInHand;
     private Weapon gun;
 
     void Start()
     {
-        canGrab = true;
         gunInHand = false;
-        grabText.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && weapon != null)
         {
-            if (weapon != null && weapon.transform.parent == hand)
+            if (gunInHand)
             {
                 Drop();
             }
-            else if (weapon != null && canGrab)
+            else
             {
                 Equip();
             }
@@ -40,12 +35,13 @@ public class WeaponPick : MonoBehaviour
             weapon.transform.position = hand.position;
             weapon.transform.rotation = hand.rotation;
             weapon.transform.parent = hand;
+            weapon.SetActive(true);
 
             gun = weapon.GetComponent<Weapon>();
-            gun.pick = this;
-
-            grabText.gameObject.SetActive(false);
-            canGrab = false;
+            if (gun != null)
+            {
+                gun.pick = this;
+            }
         }
     }
 
@@ -53,37 +49,21 @@ public class WeaponPick : MonoBehaviour
     {
         if (weapon == null) return;
 
-        gun.weaponPivot.localScale = new Vector3(1, 1, 1);
         gunInHand = false;
         weapon.transform.parent = null;
-        weapon = null;
-        gun = null;
-        canGrab = true;
+        weapon.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (weapon != null) return;
         if (other.CompareTag("Weapon"))
         {
-            grabText.gameObject.SetActive(true);
-            if (weapon == null)
-            {
-                weapon = other.gameObject;
-            } 
+            weapon = other.gameObject;
+            weapon.SetActive(false);
+            weapon.transform.position = hand.position;
+            weapon.transform.rotation = hand.rotation;
+            weapon.transform.parent = hand;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Weapon"))
-        {
-            grabText.gameObject.SetActive(false);
-
-            if (!gunInHand)
-            {
-                weapon = null;
-            }
-        }
-    }
 }

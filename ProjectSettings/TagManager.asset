@@ -8,6 +8,9 @@ TagManager:
   - bullet
   - Enemy
   - Ground
+  - pistol
+  - shotty
+  - boomer
   layers:
   - Default
   - TransparentFX
