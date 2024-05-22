@@ -16,7 +16,7 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +30,14 @@ public class PickUp : MonoBehaviour
                     inv.isFull[i] = true;
                     GameObject newItemBtn = Instantiate(itemBtn, inv.slots[i].transform);
                     newItemBtn.transform.localPosition = Vector3.zero;
+
+                    
+                    EquipButton equipButton = newItemBtn.GetComponent<EquipButton>();
+                    if (equipButton != null)
+                    {
+                        equipButton.activationKey = GetKeyCodeForSlot(i);
+                    }
+
                     Destroy(gameObject);
                     break;
                 }
@@ -37,4 +45,14 @@ public class PickUp : MonoBehaviour
         }
     }
 
+    KeyCode GetKeyCodeForSlot(int slotIndex)
+    {
+        switch (slotIndex)
+        {
+            case 0: return KeyCode.Alpha1;
+            case 1: return KeyCode.Alpha2;
+            case 2: return KeyCode.Alpha3;
+            default: return KeyCode.None;
+        }
+    }
 }

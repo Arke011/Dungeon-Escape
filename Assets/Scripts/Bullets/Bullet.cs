@@ -9,13 +9,19 @@ public class Bullet : MonoBehaviour
     Health hp;
     private bool hitTarget;
     [SerializeField] private TrailRenderer rr;
+    public bool boomShot;
+
     
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();   
         hitTarget = false;
         rr.emitting = true;
-        
+    }
+
+    void Start()
+    {
+        StartCoroutine(DestroyBullet());
     }
 
     public void Initialize(Vector3 direction, float speed)
@@ -27,7 +33,6 @@ public class Bullet : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("bullet")) {rr.emitting = false;}
         
-
         if (collision.gameObject.CompareTag("Enemy") && !hitTarget)
         { 
             print("hit enemy!");
@@ -39,7 +44,10 @@ public class Bullet : MonoBehaviour
     
     private IEnumerator DestroyBullet()
     {
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(0.5f);
+        if (!boomShot)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -2626,11 +2626,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2241745381123129995, guid: a9965ba99ef881147ad70cfd5b661508, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71428573
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2241745381123129995, guid: a9965ba99ef881147ad70cfd5b661508, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.71428573
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2241745381123129995, guid: a9965ba99ef881147ad70cfd5b661508, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3412,6 +3412,14 @@ PrefabInstance:
     - target: {fileID: 1361790567838561167, guid: 17c676192c69ff04a82f1e4837fca399, type: 3}
       propertyPath: coolDownTimer
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021491363093717865, guid: 17c676192c69ff04a82f1e4837fca399, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021491363093717865, guid: 17c676192c69ff04a82f1e4837fca399, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4021491363093717865, guid: 17c676192c69ff04a82f1e4837fca399, type: 3}
       propertyPath: m_LocalPosition.x

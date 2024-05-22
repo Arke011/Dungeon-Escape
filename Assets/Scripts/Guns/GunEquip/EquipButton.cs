@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class EquipButton : MonoBehaviour
 {
+    public KeyCode activationKey = KeyCode.Alpha1;
+
     private Button button;
     private GunManager manager;
     private bool equipped;
@@ -23,12 +25,18 @@ public class EquipButton : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(activationKey))
+        {
+            button.onClick.Invoke();
+        }
+    }
+
     void OnButtonClick()
     {
-        // Get the gun name from the button's name
         string gunName = gameObject.name;
 
-        // Equip the correct gun based on the button's name
         switch (gunName)
         {
             case "pistolBtn(Clone)":
@@ -79,7 +87,6 @@ public class EquipButton : MonoBehaviour
                 }
                 break;
 
-            
             default:
                 Debug.LogWarning("Unknown button clicked");
                 break;

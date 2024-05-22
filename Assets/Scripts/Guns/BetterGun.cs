@@ -16,6 +16,7 @@ public class BetterGun : MonoBehaviour
     public bool isShotgun;
     public GameObject boomerVisual;
     public float coolDownTimer;
+    private bool isIT;
     
 
     void Start()
@@ -41,11 +42,14 @@ public class BetterGun : MonoBehaviour
 
         Aim();
 
-        if (!EventSystem.current.IsPointerOverGameObject() && Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
+        if (!isIT && Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
             Shoot();
             StartCooldown();
         }
+
+        isIT = EventSystem.current.IsPointerOverGameObject();
+        
     }
 
     private void Shoot()

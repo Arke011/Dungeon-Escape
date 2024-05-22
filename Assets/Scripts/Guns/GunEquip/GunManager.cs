@@ -11,6 +11,7 @@ public class GunManager : MonoBehaviour
         activeGun1.SetActive(true);
         activeGun2.SetActive(false);
         activeGun3.SetActive(false);
+        
     }
 
     public void EquipGun2()
@@ -18,6 +19,7 @@ public class GunManager : MonoBehaviour
         activeGun1.SetActive(false);
         activeGun2.SetActive(true);
         activeGun3.SetActive(false);
+        
     }
 
     public void EquipGun3()
@@ -25,6 +27,7 @@ public class GunManager : MonoBehaviour
         activeGun1.SetActive(false);
         activeGun2.SetActive(false);
         activeGun3.SetActive(true);
+        
     }
 
     public void UnequipGun1()

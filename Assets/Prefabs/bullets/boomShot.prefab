@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   rr: {fileID: 5832508921427379337}
+  boomShot: 1
 --- !u!114 &7193860888515320595
 MonoBehaviour:
   m_ObjectHideFlags: 0
