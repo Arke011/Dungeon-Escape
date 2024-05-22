@@ -40,50 +40,44 @@ public class EquipButton : MonoBehaviour
         switch (gunName)
         {
             case "pistolBtn(Clone)":
-                if (manager != null && !equipped)
+                if (manager != null)
                 {
                     manager.EquipGun1();
-                    manager.UnequipGun2();
-                    manager.UnequipGun3();
                     Debug.Log("Pistol equipped");
-                    equipped = true;
+                    //equipped = true;
                 }
                 else
                 {
                     manager.UnequipGun1();
-                    equipped = false;
+                    //equipped = false;
                 }
                 break;
 
             case "shottyBtn(Clone)":
-                if (manager != null && !equipped)
+                if (manager != null)
                 {
                     manager.EquipGun2();
-                    manager.UnequipGun3();
-                    manager.UnequipGun1();
                     Debug.Log("Shotgun equipped");
-                    equipped = true;
+                    //equipped = true;
                 }
                 else
                 {
                     manager.UnequipGun2();
-                    equipped = false;
+                    //equipped = false;
                 }
                 break;
 
             case "boomerBtn(Clone)":
-                if (manager != null && !equipped)
+                if (manager != null)
                 {
                     manager.EquipGun3();
-                    manager.UnequipGun2();
-                    manager.UnequipGun1();
                     Debug.Log("boomerang equipped");
-                    equipped = true;
+                    //equipped = true;
                 }
                 else
                 {
                     manager.UnequipGun3();
-                    equipped = false;
+                    //equipped = false;
                 }
                 break;
 
