@@ -2522,10 +2522,10 @@ GameObject:
   - component: {fileID: 1642600521}
   - component: {fileID: 1642600520}
   - component: {fileID: 1642600522}
-  - component: {fileID: 1642600523}
   - component: {fileID: 1642600524}
   - component: {fileID: 1642600525}
   - component: {fileID: 1642600526}
+  - component: {fileID: 1642600527}
   m_Layer: 2
   m_Name: SmallEnemy
   m_TagString: Enemy
@@ -2636,25 +2636,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0178926, y: -0.15549803}
   m_Size: {x: 0.7135906, y: 1.689004}
   m_Direction: 0
---- !u!114 &1642600523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642600517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d94d853b9674446bebefe84f29ff05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 15
-  speed: 3
-  waypoints:
-  - {fileID: 1657285252}
-  - {fileID: 430746795}
-  - {fileID: 32713855}
-  - {fileID: 461665648}
 --- !u!114 &1642600524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,6 +2689,25 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1642600527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642600517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ae0adedd472164db3521bf38820e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 15
+  speed: 3
+  waypoints:
+  - {fileID: 1657285252}
+  - {fileID: 430746795}
+  - {fileID: 32713855}
+  - {fileID: 461665648}
 --- !u!1 &1657285251
 GameObject:
   m_ObjectHideFlags: 0

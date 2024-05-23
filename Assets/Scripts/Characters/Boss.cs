@@ -25,12 +25,16 @@ public class Boss : MonoBehaviour
     private float startEnemySpawnCD;
     private Transform target;
 
+    private Animator anim;
+    private bool isAttackingPlayer = false;
+
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         startAttackCD = attackCD;
         startShootCD = shootCD;
         startEnemySpawnCD = enemySpawnCD;
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -55,6 +59,8 @@ public class Boss : MonoBehaviour
             Instantiate(enemyPrefab, enemySpawnPos[randomSpawnPoint].position, Quaternion.identity);
             enemySpawnCD = startEnemySpawnCD;
         }
+
+        anim.SetBool("isAttacking", isAttackingPlayer);
     }
     public void Shoot()
     {
@@ -80,6 +86,12 @@ public class Boss : MonoBehaviour
         {
             attackCD = startAttackCD;
             collision.gameObject.GetComponent<Health>().TakeDamage(10);
+            isAttackingPlayer = true;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isAttackingPlayer = false;
     }
 }
