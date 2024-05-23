@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc01dc8058769fb4c9316ca267187416
+guid: 8b5a9f24fb2021f47ab2fd91e2399619
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -71,7 +71,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -84,7 +84,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638520875368533859
+  platformSettingsDirtyTick: 638520914541908427
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,58 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: ShroudDude
+  - name: PlazmaBall_Frame_0
     originalName: 
-    pivot: {x: 0.53333336, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 65
-      y: 4
-      width: 30
-      height: 62
-    spriteID: 118639c9ab60cc640a15e6ae35782f4a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 65, y: 4}
-  - name: ShroudDude_Frame_1
-    originalName: 
-    pivot: {x: 0.516129, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 144
-      width: 31
-      height: 62
-    spriteID: 5e1746743c79d914aae6278d622935fc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 144}
-  - name: ShroudDude_Frame_2
-    originalName: 
-    pivot: {x: 0.5660378, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 53
-      height: 62
-    spriteID: e144383ca78756943ae084927ca6ae30
+      width: 32
+      height: 32
+    spriteID: 69fc58dc1bf804a4f999c4fb5784309c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: ShroudDude_Frame_3
+  - name: PlazmaBall_Frame_1
     originalName: 
-    pivot: {x: 0.5660378, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 74
-      width: 53
-      height: 62
-    spriteID: 60e1946773e25354abeff838e7236641
+      y: 44
+      width: 32
+      height: 32
+    spriteID: 9736cdc37ea26aa448a7e6e61e021af0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,56 +160,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 74}
+    uvTransform: {x: 4, y: 44}
+  - name: PlazmaBall_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 84
+      width: 32
+      height: 32
+    spriteID: b84570e5a21b2c24ca2887ee20ff9888
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 84}
+  - name: PlazmaBall_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 4
+      width: 32
+      height: 32
+    spriteID: cf5797db0d7347443932401739a5034b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -537843085
-    name: ShroudDude
+    guid: 1098713770
+    name: PlazmaBall
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: ShroudDude_Frame_0
+    - name: PlazmaBall_Frame_0
       frameIndex: 0
       cellRect:
-        x: 16
+        x: 0
         y: 0
-        width: 30
-        height: 62
-      spriteId: 118639c9ab60cc640a15e6ae35782f4a
-    - name: ShroudDude_Frame_1
+        width: 32
+        height: 32
+      spriteId: 69fc58dc1bf804a4f999c4fb5784309c
+    - name: PlazmaBall_Frame_1
       frameIndex: 1
       cellRect:
-        x: 16
+        x: 0
         y: 0
-        width: 30
-        height: 61
-      spriteId: 5e1746743c79d914aae6278d622935fc
-    - name: ShroudDude_Frame_2
+        width: 32
+        height: 32
+      spriteId: 9736cdc37ea26aa448a7e6e61e021af0
+    - name: PlazmaBall_Frame_2
       frameIndex: 2
       cellRect:
-        x: 3
+        x: 0
         y: 0
-        width: 47
-        height: 62
-      spriteId: e144383ca78756943ae084927ca6ae30
-    - name: ShroudDude_Frame_3
+        width: 32
+        height: 32
+      spriteId: b84570e5a21b2c24ca2887ee20ff9888
+    - name: PlazmaBall_Frame_3
       frameIndex: 3
       cellRect:
-        x: 2
+        x: 0
         y: 0
-        width: 48
-        height: 62
-      spriteId: 60e1946773e25354abeff838e7236641
-    - name: ShroudDude_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 2
-        y: 0
-        width: 48
-        height: 62
-      spriteId: d6cc30b93e8846848856aff36c500bf2
+        width: 32
+        height: 32
+      spriteId: cf5797db0d7347443932401739a5034b
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -292,4 +284,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 32, y: 32}
