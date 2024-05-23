@@ -514,6 +514,14 @@ ScriptedImporter:
         width: 17
         height: 32
       spriteId: 3338c8a6725f6034697af980131011e6
+    - name: Player_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 8
+        y: 8
+        width: 16
+        height: 16
+      spriteId: 6e763f517994dc443b97adf77ffdc598
     linkedCells: []
     parentIndex: -1
   platformSettings:
