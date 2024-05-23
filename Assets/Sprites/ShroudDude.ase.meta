@@ -71,7 +71,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -84,7 +84,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638514851965162259
+  platformSettingsDirtyTick: 638520875368533859
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -223,15 +223,15 @@ ScriptedImporter:
       cellRect:
         x: 16
         y: 0
-        width: 31
-        height: 62
+        width: 30
+        height: 61
       spriteId: 5e1746743c79d914aae6278d622935fc
     - name: ShroudDude_Frame_2
       frameIndex: 2
       cellRect:
-        x: 2
+        x: 3
         y: 0
-        width: 53
+        width: 47
         height: 62
       spriteId: e144383ca78756943ae084927ca6ae30
     - name: ShroudDude_Frame_3
@@ -239,9 +239,17 @@ ScriptedImporter:
       cellRect:
         x: 2
         y: 0
-        width: 53
+        width: 48
         height: 62
       spriteId: 60e1946773e25354abeff838e7236641
+    - name: ShroudDude_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 2
+        y: 0
+        width: 48
+        height: 62
+      spriteId: d6cc30b93e8846848856aff36c500bf2
     linkedCells: []
     parentIndex: -1
   platformSettings:

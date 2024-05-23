@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a0e2cba4d6da424c84cdf82f9c786a6
+guid: 8b5a9f24fb2021f47ab2fd91e2399619
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -84,7 +84,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638517382264197381
+  platformSettingsDirtyTick: 638520914541908427
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,87 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Player
-    originalName: 
-    pivot: {x: 0.47058824, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 43
-      width: 17
-      height: 32
-    spriteID: 22c352551d991374da674d9e2043ee05
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 43}
-  - name: Player_Frame_1
-    originalName: 
-    pivot: {x: 0.47058824, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 30
-      y: 84
-      width: 17
-      height: 31
-    spriteID: ee5f591a4a9f0154dbc75ce43e237729
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 30, y: 84}
-  - name: Player_Frame_2
-    originalName: 
-    pivot: {x: 0.5294118, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 55
-      y: 4
-      width: 17
-      height: 31
-    spriteID: d4ea60c88f204bd4fab71c5159e6b254
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 55, y: 4}
-  - name: Player_Frame_3
-    originalName: 
-    pivot: {x: 0.5294118, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 83
-      width: 17
-      height: 32
-    spriteID: 33adb93e4c90af645a52b81517404ea9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 83}
-  - name: Player_Frame_4
+  - name: PlazmaBall_Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -210,9 +130,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 18
-      height: 31
-    spriteID: f643772b07d009b409f76700c92911c3
+      width: 32
+      height: 32
+    spriteID: 69fc58dc1bf804a4f999c4fb5784309c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -221,58 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Player_Frame_5
+  - name: PlazmaBall_Frame_1
     originalName: 
-    pivot: {x: 0.47058824, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 30
-      y: 4
-      width: 17
-      height: 32
-    spriteID: bf81e943a330ffc43ac761f138ae3099
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 30, y: 4}
-  - name: Player_Frame_6
-    originalName: 
-    pivot: {x: 0.47058824, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 55
-      y: 43
-      width: 17
-      height: 31
-    spriteID: 06d5d3a5724744d4e9ffd79c5d945ef6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 55, y: 43}
-  - name: Player_Frame_7
-    originalName: 
-    pivot: {x: 0.47058824, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 30
+      x: 4
       y: 44
-      width: 17
+      width: 32
       height: 32
-    spriteID: 3338c8a6725f6034697af980131011e6
+    spriteID: 9736cdc37ea26aa448a7e6e61e021af0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -280,88 +160,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 30, y: 44}
+    uvTransform: {x: 4, y: 44}
+  - name: PlazmaBall_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 84
+      width: 32
+      height: 32
+    spriteID: b84570e5a21b2c24ca2887ee20ff9888
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 84}
+  - name: PlazmaBall_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 4
+      width: 32
+      height: 32
+    spriteID: cf5797db0d7347443932401739a5034b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1687901567
-    name: Player
+    guid: 1098713770
+    name: PlazmaBall
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Player_Frame_0
+    - name: PlazmaBall_Frame_0
       frameIndex: 0
       cellRect:
-        x: 8
+        x: 0
         y: 0
-        width: 17
+        width: 32
         height: 32
-      spriteId: 22c352551d991374da674d9e2043ee05
-    - name: Player_Frame_1
+      spriteId: 69fc58dc1bf804a4f999c4fb5784309c
+    - name: PlazmaBall_Frame_1
       frameIndex: 1
       cellRect:
-        x: 8
+        x: 0
         y: 0
-        width: 17
-        height: 31
-      spriteId: ee5f591a4a9f0154dbc75ce43e237729
-    - name: Player_Frame_2
+        width: 32
+        height: 32
+      spriteId: 9736cdc37ea26aa448a7e6e61e021af0
+    - name: PlazmaBall_Frame_2
       frameIndex: 2
       cellRect:
-        x: 7
+        x: 0
         y: 0
-        width: 17
-        height: 31
-      spriteId: d4ea60c88f204bd4fab71c5159e6b254
-    - name: Player_Frame_3
+        width: 32
+        height: 32
+      spriteId: b84570e5a21b2c24ca2887ee20ff9888
+    - name: PlazmaBall_Frame_3
       frameIndex: 3
       cellRect:
-        x: 7
+        x: 0
         y: 0
-        width: 17
+        width: 32
         height: 32
-      spriteId: 33adb93e4c90af645a52b81517404ea9
-    - name: Player_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 7
-        y: 0
-        width: 18
-        height: 31
-      spriteId: f643772b07d009b409f76700c92911c3
-    - name: Player_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 8
-        y: 0
-        width: 17
-        height: 32
-      spriteId: bf81e943a330ffc43ac761f138ae3099
-    - name: Player_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 8
-        y: 0
-        width: 17
-        height: 31
-      spriteId: 06d5d3a5724744d4e9ffd79c5d945ef6
-    - name: Player_Frame_7
-      frameIndex: 7
-      cellRect:
-        x: 8
-        y: 0
-        width: 17
-        height: 32
-      spriteId: 3338c8a6725f6034697af980131011e6
-    - name: Player_Frame_8
-      frameIndex: 8
-      cellRect:
-        x: 8
-        y: 8
-        width: 16
-        height: 16
-      spriteId: 6e763f517994dc443b97adf77ffdc598
+      spriteId: cf5797db0d7347443932401739a5034b
     linkedCells: []
     parentIndex: -1
   platformSettings:
