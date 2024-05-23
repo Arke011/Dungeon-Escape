@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         patrolCenter = transform.position;
         SetNewDestination();
         lastPosition = transform.position;
