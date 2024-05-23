@@ -11,14 +11,16 @@ TagManager:
   - pistol
   - shotty
   - boomer
+  - BossBullet
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NotReactWithBossBullet
   - Water
   - UI
-  - 
+  - BossBullet
   - 
   - 
   - 

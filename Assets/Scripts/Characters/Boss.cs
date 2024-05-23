@@ -11,8 +11,16 @@ public class Boss : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform[] enemySpawnPos;
     public float enemySpawnCD;
+    [Space]
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public Transform shootTarget;
+    public float bulletSpeed;
+    public float shootCD;
+    [Space]
+    public float rotationSpeed;
 
-
+    private float startShootCD;
     private float startAttackCD;
     private float startEnemySpawnCD;
     private Transform target;
@@ -21,12 +29,14 @@ public class Boss : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         startAttackCD = attackCD;
+        startShootCD = shootCD;
         startEnemySpawnCD = enemySpawnCD;
     }
 
     private void Update()
     {
         enemySpawnCD -= Time.deltaTime;
+        shootCD -= Time.deltaTime;
         attackCD -= Time.deltaTime;
         if (target != null)
         {
@@ -34,16 +44,28 @@ public class Boss : MonoBehaviour
             direction.Normalize();
             transform.Translate(direction * speed * Time.deltaTime);
         }
-
+        if(shootCD <= 0)
+        {
+            Shoot();
+            shootCD = startShootCD;
+        }
         if (enemySpawnCD <= 0)
         {
             int randomSpawnPoint = Random.Range(0, enemySpawnPos.Length);
             Instantiate(enemyPrefab, enemySpawnPos[randomSpawnPoint].position, Quaternion.identity);
             enemySpawnCD = startEnemySpawnCD;
         }
-
     }
-
+    public void Shoot()
+    {
+        GameObject target = GameObject.FindWithTag("Player");
+        if (target != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Vector2 direction = (target.transform.position - firePoint.position).normalized;
+            bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("bullet"))
