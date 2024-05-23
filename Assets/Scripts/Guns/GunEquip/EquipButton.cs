@@ -7,11 +7,11 @@ public class EquipButton : MonoBehaviour
 
     private Button button;
     private GunManager manager;
-    private bool equipped;
+    
 
     void Start()
     {
-        equipped = false;
+        
         button = GetComponent<Button>();
         if (button != null)
         {
@@ -37,53 +37,27 @@ public class EquipButton : MonoBehaviour
     {
         string gunName = gameObject.name;
 
-        switch (gunName)
+        if (manager != null)
         {
-            case "pistolBtn(Clone)":
-                if (manager != null)
-                {
+            switch (gunName)
+            {
+                case "pistolBtn(Clone)":
                     manager.EquipGun1();
-                    Debug.Log("Pistol equipped");
-                    //equipped = true;
-                }
-                else
-                {
-                    manager.UnequipGun1();
-                    //equipped = false;
-                }
-                break;
+                    break;
 
-            case "shottyBtn(Clone)":
-                if (manager != null)
-                {
+                case "shottyBtn(Clone)":
                     manager.EquipGun2();
-                    Debug.Log("Shotgun equipped");
-                    //equipped = true;
-                }
-                else
-                {
-                    manager.UnequipGun2();
-                    //equipped = false;
-                }
-                break;
+                    break;
 
-            case "boomerBtn(Clone)":
-                if (manager != null)
-                {
+                case "boomerBtn(Clone)":
                     manager.EquipGun3();
-                    Debug.Log("boomerang equipped");
-                    //equipped = true;
-                }
-                else
-                {
-                    manager.UnequipGun3();
-                    //equipped = false;
-                }
-                break;
+                    break;
 
-            default:
-                Debug.LogWarning("Unknown button clicked");
-                break;
+                default:
+                    Debug.LogWarning("Unknown button clicked");
+                    break;
+            }
         }
+        
     }
 }
