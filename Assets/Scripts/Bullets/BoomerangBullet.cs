@@ -7,12 +7,13 @@ public class BoomerangBullet : MonoBehaviour
     public bool isReturning;
     public float speed = 10f;
     public Transform player;
+    float returnTimer = 0.7f;
 
     
 
     void Start()
     {
-        
+        returnTimer = 0.7f;
         player = GameObject.FindWithTag("Player").transform;
     }
 
@@ -20,9 +21,9 @@ public class BoomerangBullet : MonoBehaviour
     {
         transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime);
 
-        if (!isReturning && Vector3.Distance(transform.position, player.position) > 10f)
+        if (!isReturning && returnTimer <= 0f)
         {
-            speed += 5f;
+            speed += 7f;
             isReturning = true;
         }
 
@@ -35,6 +36,8 @@ public class BoomerangBullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        returnTimer -= Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

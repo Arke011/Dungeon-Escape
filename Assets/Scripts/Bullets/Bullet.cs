@@ -10,8 +10,9 @@ public class Bullet : MonoBehaviour
     private bool hitTarget;
     [SerializeField] private TrailRenderer rr;
     public bool boomShot;
+    public GameObject blood;
 
-    
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();   
@@ -34,8 +35,10 @@ public class Bullet : MonoBehaviour
         if (!collision.gameObject.CompareTag("bullet")) {rr.emitting = false;}
         
         if (collision.gameObject.CompareTag("Enemy") && !hitTarget)
-        { 
-            print("hit enemy!");
+        {
+            ContactPoint2D contact = collision.GetContact(0);
+            Instantiate(blood, contact.point, Quaternion.identity);
+            //print("hit enemy!");
             hp = collision.gameObject.GetComponent<Health>();
             hp.TakeDamage(damage);
             hitTarget = true;

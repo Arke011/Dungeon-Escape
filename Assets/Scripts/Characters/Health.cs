@@ -4,40 +4,37 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth = 100f;
-    public Transform healthBar;
-    public bool isBoss = false;
-    public RectTransform bossHealthBar;
+    public GameObject healthBar;
     float originalBarSize;
+    public AudioClip damageSound;
+    public AudioClip deathSound;
+    AudioSource source;
+    
 
     private void Start()
     {
-        originalBarSize = bossHealthBar.sizeDelta.x;
+        originalBarSize = healthBar.transform.localScale.x;
         currentHealth = maxHealth;
-        bossHealthBar.sizeDelta = new Vector2(originalBarSize * currentHealth / maxHealth, bossHealthBar.sizeDelta.y);
+        source = GetComponent<AudioSource>();
     }
+
     public void TakeDamage(float damage)
     {
-        if(isBoss)
-        {
-            bossHealthBar.sizeDelta = new Vector2(originalBarSize * currentHealth / maxHealth, bossHealthBar.sizeDelta.y);
-        }
+        source.PlayOneShot(damageSound);
         currentHealth -= damage;
+        
 
         if (currentHealth <= 0f)
         {
+            source.PlayOneShot(deathSound);
             currentHealth = 0f;
-            print(currentHealth);
             Debug.Log("Health depleted!");
-            Destroy(gameObject);
+            GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(gameObject, 0.5f);
         }
 
-        if(!isBoss)
-        {
-            float healthPercentage = (float)currentHealth / maxHealth;
-
-        
-            Vector3 newScale = new Vector3(healthPercentage, healthBar.localScale.y, healthBar.localScale.z);
-            healthBar.localScale = newScale;
-        }
+        float healthPercentage = Mathf.Clamp01(currentHealth / maxHealth);
+        Vector3 newScale = new Vector3(healthPercentage * originalBarSize, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+        healthBar.transform.localScale = newScale;
     }
 }

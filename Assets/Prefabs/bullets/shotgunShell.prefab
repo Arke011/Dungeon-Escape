@@ -134,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   rr: {fileID: 5579001417890094732}
+  boomShot: 0
+  blood: {fileID: 2122083759510855020, guid: 5a29c2ff3e0cc0e4c852aaaaa32d0856, type: 3}
 --- !u!50 &937627153312680623
 Rigidbody2D:
   serializedVersion: 4

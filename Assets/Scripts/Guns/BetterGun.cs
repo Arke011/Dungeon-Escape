@@ -42,7 +42,7 @@ public class BetterGun : MonoBehaviour
 
         Aim();
 
-        if (!isIT && Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
+        if (!isIT && Input.GetKey(KeyCode.Mouse0) && canShoot)
         {
             Shoot();
             StartCooldown();

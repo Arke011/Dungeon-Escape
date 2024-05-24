@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Animator anim;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     Vector2 movement;
+
+    public float maxHealth = 100f;
+    public float currentHealth = 100f;
+    public TMP_Text hpTXT;
 
     private float dashingCooldown = 2f;
     private float dashTime = 0.2f;
@@ -22,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isCooldown;
 
-
     [SerializeField] private TrailRenderer rr;
 
 
@@ -30,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         isCooldown = false;
+        currentHealth = maxHealth;
+        hpTXT.text = currentHealth.ToString();
     }
 
 
@@ -65,6 +72,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0f)
+        {
+            currentHealth = 0f;
+            print(currentHealth);
+            Debug.Log("Health depleted!");
+            Destroy(gameObject);
+        }
+
+        hpTXT.text = currentHealth.ToString();
     }
 
     private void Flip()
