@@ -55,6 +55,7 @@ public class EquipButton : MonoBehaviour
 
                 case "bombBtn(Clone)":
                     manager.EquipBomb();
+                    Destroy(gameObject);
                     break;
 
                 default:

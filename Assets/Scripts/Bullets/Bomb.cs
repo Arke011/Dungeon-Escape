@@ -14,8 +14,6 @@ public class Bomb : MonoBehaviour
     private bool hit;
     public float explosionRadius = 1f;
 
-    
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +29,7 @@ public class Bomb : MonoBehaviour
 
     public void Initialize(Vector3 direction, float speed)
     {
-        rb.velocity = direction.normalized * speed; 
+        rb.velocity = direction.normalized * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,20 +38,26 @@ public class Bomb : MonoBehaviour
         {
             hit = true;
             rr.emitting = false;
-            ContactPoint2D contact = collision.GetContact(0);
-            GameObject boom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
-            StartCoroutine(DestroyVFX(boom));
+
+            if (collision.contactCount > 0)
+            {
+                ContactPoint2D contact = collision.GetContact(0);
+                GameObject boom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
+                StartCoroutine(DestroyVFX(boom));
+            }
+
             source.Play();
             StartCoroutine(DestroyBullet());
         }
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("bullet"))
         {
-           
+            // Handle player or bullet collision
         }
 
         if (collision.gameObject.CompareTag("Enemy") && !hitTarget)
         {
+            
             var inExplosionRadius = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
             foreach (Collider2D collider in inExplosionRadius)
             {
@@ -66,13 +70,17 @@ public class Bomb : MonoBehaviour
                     var damagePercent = Mathf.InverseLerp(explosionRadius, 0, distance);
                     enemy.TakeDamage(damagePercent * damage);
                 }
-
             }
-            ContactPoint2D contact = collision.GetContact(0);
-            Instantiate(blood, contact.point, Quaternion.identity);
+
+            if (collision.contactCount > 0)
+            {
+                ContactPoint2D contact = collision.GetContact(0);
+                Instantiate(blood, contact.point, Quaternion.identity);
+                GameObject kaboom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
+                StartCoroutine(DestroyVFX(kaboom));
+            }
+
             hitTarget = true;
-            GameObject kaboom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
-            StartCoroutine(DestroyVFX(kaboom));
             source.Play();
             StartCoroutine(DestroyBullet());
         }
@@ -89,13 +97,6 @@ public class Bomb : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
-
-    void Boom()
-    {
-        
-    }
-
-    
 
     
 }

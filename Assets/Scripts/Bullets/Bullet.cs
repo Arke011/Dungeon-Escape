@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy") && !hitTarget)
         {
+            
             ContactPoint2D contact = collision.GetContact(0);
             Instantiate(blood, contact.point, Quaternion.identity);
             //print("hit enemy!");

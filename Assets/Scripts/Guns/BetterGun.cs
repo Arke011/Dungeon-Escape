@@ -138,13 +138,7 @@ public class BetterGun : MonoBehaviour
             Destroy(gameObject);
             canShoot = false;
 
-            GameObject bombBtn = GameObject.Find("bombBtn(Clone)");
-
             
-            if (bombBtn != null)
-            {
-                Destroy(bombBtn);
-            }
 
             Instantiate(shootParticles, shootPoint.position, shootPoint.rotation);
             GameObject newBullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);

@@ -23,7 +23,7 @@ public class BoomerangBullet : MonoBehaviour
 
         if (!isReturning && returnTimer <= 0f)
         {
-            speed += 7f;
+            speed += 10f;
             isReturning = true;
         }
 
@@ -44,7 +44,8 @@ public class BoomerangBullet : MonoBehaviour
     {
         if (!isReturning)
         {
-            isReturning = true;   
+            isReturning = true;
+            speed += 10f;
         }
     }
 

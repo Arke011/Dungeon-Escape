@@ -68,6 +68,7 @@ public class GunManager : MonoBehaviour
 
     public void EquipBomb()
     {
+        
         UnequipAll();
         explode = Instantiate(bombPrefab, weaponPivot.position, weaponPivot.rotation);
 

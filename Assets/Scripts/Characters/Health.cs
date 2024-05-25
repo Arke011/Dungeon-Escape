@@ -30,6 +30,7 @@ public class Health : MonoBehaviour
             currentHealth = 0f;
             Debug.Log("Health depleted!");
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
             Destroy(gameObject, 0.5f);
         }
 

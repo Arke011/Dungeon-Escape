@@ -4,12 +4,13 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
+    public float damage;
     private Transform target;
     private bool isChasing;
-    private bool isAttacking;
+    
     private float chaseTimer = 3f;
     public float speed;
-    public float chaseRange = 5f; // Adjust this value as needed
+    public float chaseRange = 5f; 
 
     public float attackCD;
     float startAttackCD;
@@ -18,7 +19,9 @@ public class EnemyAI : MonoBehaviour
     public Transform[] waypoints;
     NavMeshAgent agent;
     int currentWaypointIndex;
-    Animator anim;
+
+    
+    
 
     void Start()
     {
@@ -29,7 +32,7 @@ public class EnemyAI : MonoBehaviour
         agent.speed = speed;
         isChasing = false;
         startAttackCD = attackCD;
-        anim = GetComponent<Animator>();
+      
         StartCoroutine(MoveToNextWaypointEveryTwoSeconds());
     }
 
@@ -79,11 +82,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         attackCD -= Time.deltaTime;
-    }
-
-    private void FixedUpdate()
-    {
-        // No raycast logic needed here
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -94,19 +93,25 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            AttackPlayer(collision.gameObject);
+        }
+    }
+
     private void AttackPlayer(GameObject player)
     {
         attackCD = startAttackCD;
-        player.GetComponent<Player>().TakeDamage(20);
-        isAttacking = true;
-        anim.SetBool("isAttacking", isAttacking);
+        player.GetComponent<Player>().TakeDamage(damage);   
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("bullet"))
         {
-            hp.TakeDamage(20);
+            //hp.TakeDamage(20);
         }
     }
 
@@ -114,8 +119,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isAttacking = false;
-            anim.SetBool("isAttacking", isAttacking);
+            
+            
         }
     }
 
@@ -131,4 +136,6 @@ public class EnemyAI : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
+
+    
 }

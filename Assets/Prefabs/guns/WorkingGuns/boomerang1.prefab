@@ -151,7 +151,8 @@ MonoBehaviour:
   isBoomer: 1
   isShotgun: 0
   boomerVisual: {fileID: 2170105086163635977}
-  coolDownTimer: 2
+  coolDownTimer: 1.2
+  isBomb: 0
 --- !u!1 &2170105086163635977
 GameObject:
   m_ObjectHideFlags: 0
