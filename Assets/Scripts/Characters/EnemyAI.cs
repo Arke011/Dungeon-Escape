@@ -5,11 +5,11 @@ using System.Collections;
 public class EnemyAI : MonoBehaviour
 {
     private Transform target;
-    private bool canSee;
     private bool isChasing;
     private bool isAttacking;
     private float chaseTimer = 3f;
     public float speed;
+    public float chaseRange = 5f; // Adjust this value as needed
 
     public float attackCD;
     float startAttackCD;
@@ -26,7 +26,6 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        canSee = false;
         agent.speed = speed;
         isChasing = false;
         startAttackCD = attackCD;
@@ -51,47 +50,40 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (canSee)
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+        if (distanceToTarget <= chaseRange)
         {
             isChasing = true;
             chaseTimer = 3f;
         }
+        else
+        {
+            isChasing = false;
+        }
+
         if (isChasing && chaseTimer > 0f)
         {
             agent.SetDestination(target.position);
             FlipTowards(target.position);
         }
-        if (!canSee)
-        {
-            chaseTimer -= Time.deltaTime;
-        }
-        if (!isChasing)
+        else
         {
             agent.SetDestination(waypoints[currentWaypointIndex].position);
             FlipTowards(waypoints[currentWaypointIndex].position);
         }
-        if (chaseTimer <= 0f)
+
+        if (chaseTimer > 0f)
         {
-            isChasing = false;
+            chaseTimer -= Time.deltaTime;
         }
+
         attackCD -= Time.deltaTime;
     }
 
     private void FixedUpdate()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
-        if (ray.collider != null)
-        {
-            canSee = ray.collider.CompareTag("Player");
-            if (canSee)
-            {
-                Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-            }
-        }
+        // No raycast logic needed here
     }
 
     private void OnCollisionStay2D(Collision2D collision)

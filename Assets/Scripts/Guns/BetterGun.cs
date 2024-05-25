@@ -17,11 +17,19 @@ public class BetterGun : MonoBehaviour
     public GameObject boomerVisual;
     public float coolDownTimer;
     private bool isIT;
+    public bool isBomb;
+
+    
     
 
     void Start()
     {
         source = GetComponent<AudioSource>();
+        weaponPivot = transform.parent.parent;
+        transform.rotation = weaponPivot.rotation;
+        shootPoint = GameObject.Find("shootPoint").transform;
+        canShoot = false;
+        StartCooldown();
     }
 
     void Update()
@@ -54,7 +62,7 @@ public class BetterGun : MonoBehaviour
 
     private void Shoot()
     {
-        if (!isBoomer && !isShotgun)
+        if (!isBoomer && !isShotgun && !isBomb)
         {
             source.Play();
             canShoot = false;
@@ -73,7 +81,7 @@ public class BetterGun : MonoBehaviour
             }
 
 
-            
+
         }
         if (isShotgun)
         {
@@ -83,7 +91,7 @@ public class BetterGun : MonoBehaviour
 
             for (int i = 0; i < numBullets; i++)
             { 
-                float angleOffset = Random.Range(-1f, 1f);
+                float angleOffset = Random.Range(-2f, 2f);
     
                 GameObject newBullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
                 Bullet bullet = newBullet.GetComponent<Bullet>();
@@ -124,6 +132,34 @@ public class BetterGun : MonoBehaviour
             
             boomerVisual.GetComponent<SpriteRenderer>().enabled = false;
                
+        }
+        if (isBomb)
+        {
+            Destroy(gameObject);
+            canShoot = false;
+
+            GameObject bombBtn = GameObject.Find("bombBtn(Clone)");
+
+            
+            if (bombBtn != null)
+            {
+                Destroy(bombBtn);
+            }
+
+            Instantiate(shootParticles, shootPoint.position, shootPoint.rotation);
+            GameObject newBullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            Bomb bullet = newBullet.GetComponent<Bomb>();
+
+            if (bullet != null)
+            {
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePos.z = 0;
+
+                Vector3 shootDirection = (mousePos - shootPoint.position).normalized;
+                bullet.Initialize(shootDirection, bulletSpeed);
+            }
+
+            
         }
     }
 

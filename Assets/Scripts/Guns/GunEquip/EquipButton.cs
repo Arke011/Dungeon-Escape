@@ -53,6 +53,10 @@ public class EquipButton : MonoBehaviour
                     manager.EquipGun3();
                     break;
 
+                case "bombBtn(Clone)":
+                    manager.EquipBomb();
+                    break;
+
                 default:
                     Debug.LogWarning("Unknown button clicked");
                     break;

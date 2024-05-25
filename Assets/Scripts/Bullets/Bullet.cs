@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private TrailRenderer rr;
     public bool boomShot;
     public GameObject blood;
+    
 
 
     void Awake()
@@ -32,8 +33,18 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("bullet")) {rr.emitting = false;}
-        
+        if (!collision.gameObject.CompareTag("bullet"))
+        {   
+            rr.emitting = false;
+            ContactPoint2D contact = collision.GetContact(0);
+            
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
         if (collision.gameObject.CompareTag("Enemy") && !hitTarget)
         {
             ContactPoint2D contact = collision.GetContact(0);
@@ -42,6 +53,7 @@ public class Bullet : MonoBehaviour
             hp = collision.gameObject.GetComponent<Health>();
             hp.TakeDamage(damage);
             hitTarget = true;
+            
         }
     }
     

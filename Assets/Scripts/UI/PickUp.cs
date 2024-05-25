@@ -52,6 +52,7 @@ public class PickUp : MonoBehaviour
             case 0: return KeyCode.Alpha1;
             case 1: return KeyCode.Alpha2;
             case 2: return KeyCode.Alpha3;
+            case 3: return KeyCode.Alpha4;
             default: return KeyCode.None;
         }
     }
