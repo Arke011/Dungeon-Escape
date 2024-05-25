@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     private bool isCooldown;
 
     [SerializeField] private TrailRenderer rr;
-
+    AudioSource source;
 
     void Start()
     {
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         isCooldown = false;
         currentHealth = maxHealth;
         hpTXT.text = currentHealth.ToString();
+        source = GetComponent<AudioSource>();
     }
 
 
@@ -76,6 +77,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        source.Play();
         currentHealth -= damage;
 
         if (currentHealth <= 0f)

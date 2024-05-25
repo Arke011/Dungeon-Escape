@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent agent;
     int currentWaypointIndex;
 
-    
+    public bool isMonster;
     
 
     void Start()
@@ -79,6 +79,15 @@ public class EnemyAI : MonoBehaviour
         if (chaseTimer > 0f)
         {
             chaseTimer -= Time.deltaTime;
+        }
+
+        if (isMonster && distanceToTarget <= 4f)
+        {
+            agent.speed = 0f;
+        }
+        else
+        {
+            agent.speed = speed;
         }
 
         attackCD -= Time.deltaTime;

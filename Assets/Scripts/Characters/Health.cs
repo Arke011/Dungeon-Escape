@@ -26,11 +26,19 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
             source.PlayOneShot(deathSound);
             currentHealth = 0f;
             Debug.Log("Health depleted!");
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
+            RedMonster monstuh = GetComponent<RedMonster>();
+            if (monstuh != null) { monstuh.enabled = false; }
+            
+            
             Destroy(gameObject, 0.5f);
         }
 

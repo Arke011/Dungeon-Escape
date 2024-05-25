@@ -75,9 +75,10 @@ public class Bomb : MonoBehaviour
             if (collision.contactCount > 0)
             {
                 ContactPoint2D contact = collision.GetContact(0);
-                Instantiate(blood, contact.point, Quaternion.identity);
+                GameObject red = Instantiate(blood, contact.point, Quaternion.identity);
                 GameObject kaboom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
                 StartCoroutine(DestroyVFX(kaboom));
+                Destroy(red, 1f);
             }
 
             hitTarget = true;
