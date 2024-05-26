@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        CinemachineShake.Instance.ShakeCamera(4f, 0.2f);
         source.Play();
         currentHealth -= damage;
 

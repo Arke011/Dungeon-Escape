@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 7598099496275815084}
   - component: {fileID: 6312511842161849307}
   - component: {fileID: 3454064961370775507}
-  - component: {fileID: 3375786986396193867}
   - component: {fileID: 3809065341253426096}
   m_Layer: 0
   m_Name: bomberEnemy
@@ -220,6 +219,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
+  isMonster: 0
 --- !u!114 &1913622263093297034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +237,9 @@ MonoBehaviour:
   healthBar: {fileID: 8697812152506892032}
   damageSound: {fileID: 8300000, guid: 3b3c7d61d692e874fa81079efc4c1d5e, type: 3}
   deathSound: {fileID: 8300000, guid: fc0844c11b6523d4f955bb9b7de0368c, type: 3}
+  isDroplet: 0
+  isBoss: 0
+  bossHP: {fileID: 0}
 --- !u!82 &1038117328666956677
 AudioSource:
   m_ObjectHideFlags: 0
@@ -358,7 +361,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &7598099496275815084
 CapsuleCollider2D:
@@ -513,20 +516,6 @@ NavMeshAgent:
   m_BaseOffset: 0.175
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3375786986396193867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684571651993036909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a3447e7c06b8145b0065c227b341d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  strength: 10
 --- !u!114 &3809065341253426096
 MonoBehaviour:
   m_ObjectHideFlags: 0

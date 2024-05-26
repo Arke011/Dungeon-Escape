@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 902857a7a3ad09a4f90a4dd7f0e36464, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -229,10 +229,11 @@ MonoBehaviour:
   weaponPivot: {fileID: 0}
   shootPoint: {fileID: 0}
   bulletPrefab: {fileID: 3221494643996916698, guid: 7c2eeeab4c6776942868dc927dde6577, type: 3}
-  bulletSpeed: 40
+  bulletSpeed: 50
   shootDelay: 0.3
   shootParticles: {fileID: 201250119082514193, guid: 83fda2fff914e9e4d903a28f9590d9f5, type: 3}
   isBoomer: 0
   isShotgun: 0
   boomerVisual: {fileID: 0}
   coolDownTimer: 0.3
+  isBomb: 0

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BossBullet : MonoBehaviour
 {
+    public float damage;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Player"))
         {
-            if(collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player"))
             {
-                print("damaged");
-                collision.gameObject.GetComponent<Health>().TakeDamage(30);
+                Debug.Log("Player damaged");
+                collision.gameObject.GetComponent<Player>().TakeDamage(damage);
             }
             Destroy(gameObject);
         }

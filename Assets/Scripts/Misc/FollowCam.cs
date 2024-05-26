@@ -1,37 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
     public Vector3 offset;
-    [Range(0.01f, 0.99f)] public float smoothness;
+    [Range(0.01f, 1f)] public float smoothness;
 
-    void Start()
+    private void LateUpdate()
     {
-        
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        
-        if (player != null)
-        {
-            
-            target = player.transform;
-        }
-        else
-        {
-            Debug.LogWarning("Player not found! Make sure to tag your player GameObject with the 'Player' tag.");
-        }
-    }
-
-    void LateUpdate()
-    {
-        
         if (target != null)
         {
-            
-            transform.position = Vector3.Lerp(transform.position, target.position + offset, smoothness);
+            // Calculate the desired position of the camera
+            Vector3 desiredPosition = target.position + offset;
+
+            // Smoothly move the camera towards the desired position
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothness);
         }
     }
 }

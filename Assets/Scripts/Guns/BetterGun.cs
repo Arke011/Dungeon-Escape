@@ -69,6 +69,7 @@ public class BetterGun : MonoBehaviour
 
             Instantiate(shootParticles, shootPoint.position, shootPoint.rotation);
             GameObject newBullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            CinemachineShake.Instance.ShakeCamera(1f, 0.1f);
             Bullet bullet = newBullet.GetComponent<Bullet>();
 
             if (bullet != null)
@@ -88,7 +89,7 @@ public class BetterGun : MonoBehaviour
             source.Play();
             canShoot = false;
             int numBullets = 5;
-
+            CinemachineShake.Instance.ShakeCamera(2f, 0.2f);
             for (int i = 0; i < numBullets; i++)
             { 
                 float angleOffset = Random.Range(-2f, 2f);

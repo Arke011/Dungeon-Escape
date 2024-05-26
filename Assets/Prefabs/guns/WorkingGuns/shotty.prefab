@@ -145,13 +145,14 @@ MonoBehaviour:
   weaponPivot: {fileID: 0}
   shootPoint: {fileID: 0}
   bulletPrefab: {fileID: 7574084456060139741, guid: 5e8808981ebb88c40b4a6116ed8c2c3e, type: 3}
-  bulletSpeed: 30
+  bulletSpeed: 50
   shootDelay: 1.5
   shootParticles: {fileID: 5072412514571676003, guid: 1cee972fb85edbc4c9af3792037261ca, type: 3}
   isBoomer: 0
   isShotgun: 1
   boomerVisual: {fileID: 0}
   coolDownTimer: 1.5
+  isBomb: 0
 --- !u!1 &7479134599836018458
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +225,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ce5d18d264284ad42827462d89107057, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

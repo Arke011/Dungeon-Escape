@@ -47,7 +47,8 @@ public class BoomerangBullet : MonoBehaviour
             isReturning = true;
             speed += 10f;
         }
-        
+       
+
     }
 
    

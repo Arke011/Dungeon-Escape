@@ -44,6 +44,7 @@ public class Bomb : MonoBehaviour
                 ContactPoint2D contact = collision.GetContact(0);
                 GameObject boom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
                 StartCoroutine(DestroyVFX(boom));
+                CinemachineShake.Instance.ShakeCamera(2f, 0.3f);
             }
 
             source.Play();
@@ -78,6 +79,7 @@ public class Bomb : MonoBehaviour
                 GameObject red = Instantiate(blood, contact.point, Quaternion.identity);
                 GameObject kaboom = Instantiate(explosionVFX, contact.point, Quaternion.identity);
                 StartCoroutine(DestroyVFX(kaboom));
+                CinemachineShake.Instance.ShakeCamera(3f, 0.5f);
                 Destroy(red, 1f);
             }
 

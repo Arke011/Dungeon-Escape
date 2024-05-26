@@ -101,7 +101,7 @@ MonoBehaviour:
   weaponPivot: {fileID: 0}
   shootPoint: {fileID: 0}
   bulletPrefab: {fileID: 2687734322222047910, guid: c41a6295f96a5a54f84c8609fd48c989, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 20
   shootDelay: 0.1
   shootParticles: {fileID: 5072412514571676003, guid: 1cee972fb85edbc4c9af3792037261ca, type: 3}
   isBoomer: 0

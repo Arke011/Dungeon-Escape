@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3097269239226374289}
   - component: {fileID: 6694015511150405994}
   - component: {fileID: 6931174496313341820}
-  - component: {fileID: 3624144476837886825}
   - component: {fileID: 6889941334285634235}
   - component: {fileID: 8621129595094293726}
   - component: {fileID: 1618861401312980025}
@@ -117,6 +116,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isMonster: 0
 --- !u!114 &1970825699041760438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +134,9 @@ MonoBehaviour:
   healthBar: {fileID: 5578971810471799037}
   damageSound: {fileID: 8300000, guid: 3b3c7d61d692e874fa81079efc4c1d5e, type: 3}
   deathSound: {fileID: 8300000, guid: fc0844c11b6523d4f955bb9b7de0368c, type: 3}
+  isDroplet: 0
+  isBoss: 0
+  bossHP: {fileID: 0}
 --- !u!82 &3097269239226374289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -273,20 +276,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3624144476837886825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3103886422392277652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a3447e7c06b8145b0065c227b341d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 6889941334285634235}
-  strength: 8
 --- !u!50 &6889941334285634235
 Rigidbody2D:
   serializedVersion: 4
@@ -312,7 +301,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &8621129595094293726
 CapsuleCollider2D:
