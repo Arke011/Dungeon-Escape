@@ -21,6 +21,8 @@ public class EnemyAI : MonoBehaviour
     int currentWaypointIndex;
 
     public bool isMonster;
+
+    bool canSee;
     
 
     void Start()
@@ -81,11 +83,11 @@ public class EnemyAI : MonoBehaviour
             chaseTimer -= Time.deltaTime;
         }
 
-        if (isMonster && distanceToTarget <= 4f)
+        if (isMonster && distanceToTarget <= 4f && canSee == true)
         {
             agent.speed = 0f;
         }
-        else
+        if (isMonster && !canSee)
         {
             agent.speed = speed;
         }
@@ -143,6 +145,23 @@ public class EnemyAI : MonoBehaviour
         else if (direction.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
+        if (ray.collider != null)
+        {
+            canSee = ray.collider.CompareTag("Player");
+            if (canSee)
+            {
+                Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+            }
         }
     }
 

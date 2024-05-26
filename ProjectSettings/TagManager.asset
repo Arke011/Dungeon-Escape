@@ -13,6 +13,7 @@ TagManager:
   - boomer
   - BossBullet
   - Wall
+  - enemyBullet
   layers:
   - Default
   - TransparentFX

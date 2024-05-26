@@ -29,8 +29,11 @@ public class RedMonster : MonoBehaviour
         {
             Shoot(player);
         }
-
-        AimAtTarget(player);
+        if (distanceToTarget <= 8f)
+        {
+            AimAtTarget(player);
+        }
+        
         shootTimer -= Time.deltaTime;
     }
 
