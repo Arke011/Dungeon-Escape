@@ -7,16 +7,43 @@ public class GunManager : MonoBehaviour
     public GameObject activeGun3;
     public GameObject bombPrefab;
     public Transform weaponPivot;
+    public Transform weaponOffset;
     GameObject explode;
     GameObject gun1;
     GameObject gun2;
     GameObject gun3;
+    public GameObject flashlight;
     //bool equipped;
     
     void Start()
     {
         //equipped = false;
     }
+
+    void Update()
+    {
+        Aim();
+    }
+
+    private void Aim()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseDirection = mousePosition - weaponPivot.position;
+        float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
+
+        if (mouseDirection.x < 0)
+        {
+            weaponOffset.localScale = new Vector3(-1, 1, 1);
+            angle += 180f;
+        }
+        else
+        {
+            weaponOffset.localScale = new Vector3(1, 1, 1);
+        }
+        weaponOffset.eulerAngles = new Vector3(0, 0, angle);
+    }
+
+
 
     public void EquipGun1()
     {
@@ -32,6 +59,7 @@ public class GunManager : MonoBehaviour
         UnequipGun2();
         UnequipGun3();
         UnequipBomb();
+        
     }
 
     public void EquipGun2()
@@ -48,6 +76,7 @@ public class GunManager : MonoBehaviour
         UnequipGun1();
         UnequipGun3();
         UnequipBomb();
+        
     }
 
     public void EquipGun3()
@@ -64,6 +93,7 @@ public class GunManager : MonoBehaviour
         UnequipGun2();
         UnequipGun1();
         UnequipBomb();
+        
     }
 
     public void EquipBomb()
@@ -80,28 +110,33 @@ public class GunManager : MonoBehaviour
         UnequipGun1();
         UnequipGun2();
         UnequipGun3();
+        
     }
 
 
     public void UnequipGun1()
     {
         Destroy(gun1);
+        
     }
 
     public void UnequipGun2()
     {
         Destroy(gun2);
+        
     }
 
     public void UnequipGun3()
     {
         Destroy(gun3);
+        
     }
 
     public void UnequipBomb()
     {
         Destroy(explode);
         //quipped = false;
+        
     }
 
     public void UnequipAll()
@@ -110,5 +145,6 @@ public class GunManager : MonoBehaviour
         Destroy(gun2);
         Destroy(gun3);
         Destroy(explode);
+        
     }
 }

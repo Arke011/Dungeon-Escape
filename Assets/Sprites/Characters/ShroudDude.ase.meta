@@ -350,6 +350,22 @@ ScriptedImporter:
         width: 48
         height: 62
       spriteId: d6cc30b93e8846848856aff36c500bf2
+    - name: ShroudDude_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 16
+        y: 0
+        width: 30
+        height: 62
+      spriteId: da6ec1a3c5a77ed43a56504744c0da94
+    - name: ShroudDude_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 16
+        y: 0
+        width: 30
+        height: 61
+      spriteId: 1d4e94ce49e7202448b36582062a5b6f
     linkedCells: []
     parentIndex: -1
   platformSettings:
