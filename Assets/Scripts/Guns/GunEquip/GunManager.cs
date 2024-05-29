@@ -13,35 +13,19 @@ public class GunManager : MonoBehaviour
     GameObject gun2;
     GameObject gun3;
     public GameObject flashlight;
-    //bool equipped;
+    
     
     void Start()
     {
-        //equipped = false;
+        
     }
 
     void Update()
     {
-        Aim();
+        
     }
 
-    private void Aim()
-    {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 mouseDirection = mousePosition - weaponPivot.position;
-        float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
-
-        if (mouseDirection.x < 0)
-        {
-            weaponOffset.localScale = new Vector3(-1, 1, 1);
-            angle += 180f;
-        }
-        else
-        {
-            weaponOffset.localScale = new Vector3(1, 1, 1);
-        }
-        weaponOffset.eulerAngles = new Vector3(0, 0, angle);
-    }
+   
 
 
 
@@ -59,7 +43,7 @@ public class GunManager : MonoBehaviour
         UnequipGun2();
         UnequipGun3();
         UnequipBomb();
-        
+        flashlight.SetActive(true);
     }
 
     public void EquipGun2()
@@ -76,7 +60,7 @@ public class GunManager : MonoBehaviour
         UnequipGun1();
         UnequipGun3();
         UnequipBomb();
-        
+        flashlight.SetActive(true);
     }
 
     public void EquipGun3()
@@ -93,12 +77,12 @@ public class GunManager : MonoBehaviour
         UnequipGun2();
         UnequipGun1();
         UnequipBomb();
-        
+        flashlight.SetActive(true);
     }
 
     public void EquipBomb()
     {
-        
+       
         UnequipAll();
         explode = Instantiate(bombPrefab, weaponPivot.position, weaponPivot.rotation);
 
@@ -110,7 +94,7 @@ public class GunManager : MonoBehaviour
         UnequipGun1();
         UnequipGun2();
         UnequipGun3();
-        
+        flashlight.SetActive(false);
     }
 
 

@@ -6,10 +6,13 @@ public class Slot : MonoBehaviour
 {
     private Inventory inv;
     public int i;
+    public GameObject flashlight;
+   
 
     void Start()
     {
         inv = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        
     }
 
     void Update()
@@ -26,6 +29,7 @@ public class Slot : MonoBehaviour
         {
             child.GetComponent<Spawn>().SpawnDropItem();
             GameObject.Destroy(child.gameObject);
+            flashlight.SetActive(false);
         }
     }
 }

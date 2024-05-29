@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
 
     public TMP_Text bossHP;
     private Animator anim;
+    public bool doesDrop;
+    public GameObject itemToDrop;
 
     private void Start()
     {
@@ -67,6 +69,10 @@ public class Health : MonoBehaviour
 
     private void HandleDeath()
     {
+        if (doesDrop)
+        {
+            Instantiate(itemToDrop, transform.position, transform.rotation);
+        }
         source.PlayOneShot(deathSound);
         currentHealth = 0f;
         Debug.Log("Health depleted!");

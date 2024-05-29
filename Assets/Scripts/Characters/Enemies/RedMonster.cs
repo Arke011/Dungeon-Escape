@@ -13,7 +13,7 @@ public class RedMonster : MonoBehaviour
     public GameObject bulletPrefab;
     AudioSource source;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -21,7 +21,7 @@ public class RedMonster : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         float distanceToTarget = Vector3.Distance(transform.position, player.position);

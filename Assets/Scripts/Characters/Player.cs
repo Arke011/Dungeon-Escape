@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -31,6 +32,18 @@ public class Player : MonoBehaviour
     [SerializeField] private TrailRenderer rr;
     AudioSource source;
 
+    bool bossTrigerred;
+    public GameObject Boss;
+    public GameObject BossHP;
+    public GameObject BossTXT;
+
+    public AudioSource MainMusic;
+    public AudioSource BossMusic;
+    public Health hp;
+    bool bossDied;
+    public bool inTutorial;
+   
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +51,12 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         hpTXT.text = currentHealth.ToString();
         source = GetComponent<AudioSource>();
+        if (!inTutorial)
+        {
+            bossTrigerred = false;
+            bossDied = false;
+        }
+        
     }
 
 
@@ -73,6 +92,11 @@ public class Player : MonoBehaviour
         }
 
         Flip();
+        if (hp.currentHealth <= 0f && bossDied && !inTutorial)
+        {
+            MainMusic.Play();
+            bossDied = true;
+        }
     }
 
     public void TakeDamage(float damage)
@@ -87,6 +111,7 @@ public class Player : MonoBehaviour
             print(currentHealth);
             Debug.Log("Health depleted!");
             Destroy(gameObject);
+            SceneManager.LoadScene("lose");
         }
 
         hpTXT.text = currentHealth.ToString();
@@ -146,5 +171,20 @@ public class Player : MonoBehaviour
         }
 
         rb.velocity = new Vector2(horizontal * moveSpeed, vertical * moveSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (!bossTrigerred && collider.gameObject.CompareTag("bossTrigger") && !inTutorial)
+        {
+            bossTrigerred = true;
+            Boss.SetActive(true);
+            BossHP.SetActive(true);
+            BossTXT.SetActive(true);
+            MainMusic.Stop();
+            BossMusic.Play();
+           
+        }
+        
     }
 }

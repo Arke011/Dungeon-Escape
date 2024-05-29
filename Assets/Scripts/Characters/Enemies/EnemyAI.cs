@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     public bool isMonster;
 
     bool canSee;
+    
 
     void Start()
     {

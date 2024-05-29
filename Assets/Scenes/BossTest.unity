@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 0
+  flashlight: {fileID: 0}
 --- !u!114 &192169636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 2
+  flashlight: {fileID: 0}
 --- !u!114 &225829862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48efda57c28bc544cbca6eddef9cdf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   offset: {x: 0, y: 0, z: -10}
   smoothness: 0.01
 --- !u!4 &236244276
@@ -976,6 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 3
+  flashlight: {fileID: 0}
 --- !u!114 &731037616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1052,11 @@ RectTransform:
   m_AnchoredPosition: {x: 135, y: -237.5}
   m_SizeDelta: {x: 69.973, y: 69.872}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &869531511 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4071672043550003491, guid: 44f12911ca996e948be8c3d83d5ef599, type: 3}
+  m_PrefabInstance: {fileID: 2195342610986839689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &936061532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,6 +1682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 1
+  flashlight: {fileID: 0}
 --- !u!114 &1196143055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,6 +3481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: deathBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 7607053987462212492, guid: 44f12911ca996e948be8c3d83d5ef599, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 869531511}
     - target: {fileID: 7607053987462212492, guid: 44f12911ca996e948be8c3d83d5ef599, type: 3}
       propertyPath: shootTarget
       value: 

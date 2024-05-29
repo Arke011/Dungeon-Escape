@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809e115d1efedc74b923fa68db720c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   rr: {fileID: 5579001417890094732}
   boomShot: 0
   blood: {fileID: 2122083759510855020, guid: 5a29c2ff3e0cc0e4c852aaaaa32d0856, type: 3}

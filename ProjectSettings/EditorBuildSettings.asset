@@ -8,7 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ArkeTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 35caae6f9d4def14c85b3c8356d5335f
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7b6619eeb14ca014c88db7123d1eb0d7
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d5565a42763b27e4c9a6ec723cc70798
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 4180239b9d871bb478180e8bb32ec776
+  - enabled: 1
+    path: Assets/Scenes/lose.unity
+    guid: e8eba49b3b9764b4099cda0f20229056
+  - enabled: 1
+    path: Assets/Scenes/win.unity
+    guid: 23e3d82df99087e4a896445013f09756
   m_configObjects: {}

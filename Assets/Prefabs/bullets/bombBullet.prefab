@@ -363,8 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ddd8776aad86f469805e0d574fc472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 100
   rr: {fileID: -3510715848202601716}
   blood: {fileID: 2122083759510855020, guid: 5a29c2ff3e0cc0e4c852aaaaa32d0856, type: 3}
   explosionVFX: {fileID: 2122083759510855020, guid: c508ef34f936e0e46befaf3409a39a55, type: 3}
-  explosionRadius: 4
+  explosionRadius: 6

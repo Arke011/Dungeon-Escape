@@ -22,6 +22,7 @@ public class Boss : MonoBehaviour
     public float rotationSpeed;
     public AudioClip stageTwoSound;
     public AudioSource audioSource;
+    public AudioSource shootSound;
 
     private float attackTimer;
     private float shootTimer;
@@ -134,6 +135,7 @@ public class Boss : MonoBehaviour
     {
         if (target != null)
         {
+            shootSound.Play();
             isAttackingPlayer = true;
             GameObject bullet = Instantiate(slicePrefab, firePoint.position, Quaternion.identity);
             Vector2 direction = (target.position - firePoint.position).normalized;
@@ -154,6 +156,7 @@ public class Boss : MonoBehaviour
     {
         if (target != null)
         {
+            shootSound.Play();
             isShooting = true;
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             Vector2 direction = (target.position - firePoint.position).normalized;
