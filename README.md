@@ -11,7 +11,7 @@ WASD - Movement | LShift - Dash | F - Interaction, drop wearpon |  Mouse1 - Shoo
 
 ## Our team:
 
-### @Arke011  - Programming and UI.
-### @DeimisM  - Effects and help with everyone.
-### @ZanY3  - Programming and physics.
-### @Alizrds  - Level design and sounds.
+### @Arke011  - Main programming and feature design.
+### @DeimisM  - Game effects.
+### @ZanY3  - Programming.
+### @Alizrds  - Level design.
